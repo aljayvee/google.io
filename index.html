@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Chrome</title>
+</head>
+<style>
+#text{
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    size: 12pt;
+    color: whitesmoke;
+    margin: auto;
+    width: 50%;
+    font-size: 40pt;
+    padding: 10px;
+    padding-top: -10pt;
+
+}
+
+body{
+    background-image: url('img1.jpg');
+}
+
+#domainInput {
+      width: 400px;
+      height: 30px;
+      padding: 10px;
+      border: 1px solid #B0B7BE;
+      border-radius: 15px 15px 15px 15px;
+      font-size: 16px;
+      color: black;
+      margin-top: 20%;
+      margin-left: 34%;
+    }
+
+</style>
+<script>
+
+
+function searchKeyword() {
+    var searchInput = document.getElementById("domainInput").value;
+    
+    // Perform a Google search for the entered keyword
+    var searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchInput);
+
+if(searchInput == ""){
+alert("Fill it up.");
+}
+else{
+    window.location.href = searchUrl;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("domainInput").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+                searchKeyword();
+        }
+    });
+});
+
+</script>
+
+<body>
+    <div>
+      <p id="text">Good Experience with Chrome.</p>
+    </div>
+    <div>
+        <input type="text" id="domainInput" placeholder="Google Chrome">
+    </div>
+</body>
+</html>
